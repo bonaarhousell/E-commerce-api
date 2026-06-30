@@ -94,14 +94,15 @@ ecommerce_api/
 
 ### Product
 
-| Method | Endpoint                       | Description              |
-| ------ | ------------------------------ | ------------------------ |
-| POST   | `/product`                     | Create product (Admin)   |
-| GET    | `/product`                     | Get all products         |
-| GET    | `/product/{id_product}`        | Get product detail       |
-| GET    | `/product/category/{category}` | Get products by category |
-| PUT    | `/product/{id_product}`        | Update product (Admin)   |
-| DELETE | `/product/{id_product}`        | Delete product (Admin)   |
+| Method | Endpoint                       | Description                  |
+| ------ | ------------------------------ | ---------------------------- |
+| POST   | `/product`                     | Create product (Admin)       |
+| GET    | `/product`                     | Get all products             |
+| GET    | `/product/{id_product}`        | Get product detail           |
+| GET    | `/product/category/{category}` | Get products by category     |
+| PUT    | `/product/{id_product}`        | Update product (Admin)       |
+| PUT    | `/product/stock/{id_product}`  | Update product stock (Admin) |
+| DELETE | `/product/{id_product}`        | Delete product (Admin)       |
 
 ### Cart
 
