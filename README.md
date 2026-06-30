@@ -2,6 +2,8 @@
 
 A RESTful E-Commerce API built with **FastAPI**, **PostgreSQL**, and **SQLAlchemy**. This project demonstrates authentication, shopping cart management, checkout, order management, database migrations, automated testing, logging, and Docker containerization.
 
+Project idea from roadmap.sh:https://roadmap.sh/projects/ecommerce-api
+
 ---
 
 ## Features
