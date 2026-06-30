@@ -21,7 +21,7 @@ def register(
     ).first()
     if existing_user:
         raise HTTPException(
-            status_code=401,
+            status_code=409,
             detail="Username already use"
         )
     password_hash = bcrypt.hashpw(user.password.encode(),bcrypt.gensalt()).decode()

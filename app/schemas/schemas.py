@@ -3,13 +3,13 @@ from typing import Literal
 from datetime import datetime
 
 class UserCreate(BaseModel):
-    username: str
+    username: str = Field(min_length=3, max_length=30)
     email: str
-    password: str
+    password: str = Field(min_length=8)
 
 class ProductCreate(BaseModel):
     name_product: str
-    price_product: int
+    price_product: int = Field(gt=0)
     category_product: Literal[
         "Electronics",
         "Food",
@@ -17,7 +17,7 @@ class ProductCreate(BaseModel):
         "Stationery",
         "Fashion"
     ]
-    stock: int
+    stock: int = Field(ge=0)
 
 class ProductUpdate(BaseModel):
     name_product: str
