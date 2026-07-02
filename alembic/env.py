@@ -10,9 +10,14 @@ from app.models import model
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
 config = context.config
+if isinstance(DB_URL, str):
+    db_url = DB_URL
+else:
+    db_url = DB_URL.render_as_string(hide_password=False)
+
 config.set_main_option(
     "sqlalchemy.url",
-    DB_URL.render_as_string(hide_password=False).replace("%", "%%")
+    db_url.replace("%", "%%")
 )
 
 # Interpret the config file for Python logging.
