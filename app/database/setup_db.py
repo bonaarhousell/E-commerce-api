@@ -9,14 +9,14 @@ load_dotenv()
 database_url = os.getenv("DATABASE_URL")
 
 if database_url:
-    database_url = database_url.replace(
+    DB_URL= database_url.replace(
         "postgresql://",
         "postgresql+psycopg://",
         1
     )
-    engine = create_engine(database_url)
+    engine = create_engine(DB_URL)
 else:
-    db_url = URL.create(
+    DB_URL = URL.create(
         drivername="postgresql+psycopg",
         username=os.getenv("DB_USERNAME"),
         password=os.getenv("DB_PASSWORD"),
@@ -24,7 +24,7 @@ else:
         port=os.getenv("DB_PORT"),
         database=os.getenv("DB_NAME"),
     )
-    engine = create_engine(db_url)
+    engine = create_engine(DB_URL)
 
 SessionLocal = sessionmaker(
     bind=engine,
