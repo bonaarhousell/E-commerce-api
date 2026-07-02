@@ -8,6 +8,8 @@ load_dotenv()
 
 database_url = os.getenv("DATABASE_URL")
 
+print("DATABASE_URL exists:", bool(database_url))
+print("DATABASE_URL value:", database_url[:30] + "..." if database_url else None)
 if database_url:
     engine = create_engine(database_url)
 else:
